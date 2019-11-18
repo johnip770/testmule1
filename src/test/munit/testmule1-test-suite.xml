@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="testmule1-test-suite.xml" />
+	<munit:test name="testmule1-test-suite-testmule1FlowTest" doc:id="8a584e5e-c6f5-463d-b777-64605c984b72" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to testmule1Flow" doc:id="ba85fd56-e2cf-4bd7-a760-43c15bcd606e" name="testmule1Flow"/>
+		</munit:execution>
+		<munit:validation>
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="f091b4f0-3ef9-4181-b03d-e377096276ee" actual="#[payload.status]" expected="Hello How are you?"/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
